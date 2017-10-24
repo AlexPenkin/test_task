@@ -17,7 +17,10 @@
     position: relative;
 }
 
-.modal-message-button {
+.modal-message-button-edit,
+.modal-message-button-delete
+ {
+    position: absolute;
     margin: 0 auto;
     width: 100px;
     display: block;
@@ -32,6 +35,16 @@
     -o-transition: all .1s ease;
     transition: all .1s ease;
     outline: none;
+}
+
+.modal-message-button-edit {
+    left: 15px;
+    bottom: 20px;
+}
+
+.modal-message-button-delete {
+    right: 15px;
+    bottom: 20px;
 }
 
 .modal-message-box-title {

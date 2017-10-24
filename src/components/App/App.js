@@ -72,6 +72,7 @@ class App extends Component {
                     message={this.state.messages[0]}
                     onCloseModal={this.onCloseModal}
                     deleteRow={this.deleteRow}
+                    updateData={this.updateData}
                 />}
                 <Table
                     updateData={this.updateData}

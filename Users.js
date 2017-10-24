@@ -32,6 +32,16 @@ class Users {
         ];
     }
 
+    findIndexById(id) {
+        let index;
+        for (let i = 0; i < this.users.length; i++) {
+            if (this.users[i].id === id) {
+                index = i;
+                break;
+            }
+        }
+        return index;
+    }
 
     get() {
         return this.users;
@@ -42,14 +52,13 @@ class Users {
         this.users.push({...user, id: Users.Id});
     }
 
+    patch(user) {
+        const index = this.findIndexById(user.id);
+        this.users[index] = user;
+    }
+
     delete(id) {
-        let index;
-        for (let i = 0; i < this.users.length; i++) {
-            if (this.users[i].id === id) {
-                index = i;
-                break;
-            }
-        }
+        const index = this.findIndexById(id);
         this.users.splice(index, 1);
     }
 }

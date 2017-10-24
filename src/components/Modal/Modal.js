@@ -4,7 +4,9 @@ import ModalError from './ModalError';
 import ModalRow from './ModalRow';
 import './Modal.css';
 
-const Modal = ({message, onCloseModal, deleteRow}) => (
+const Modal = ({
+    message, onCloseModal, deleteRow, updateData
+}) => (
     <div className="modal">
         <div className="modal-message-box">
             <div className="modal-message-box-title">{message.title}</div>
@@ -20,18 +22,11 @@ const Modal = ({message, onCloseModal, deleteRow}) => (
                 firstName={message.firstName}
                 age={message.age}
                 email={message.email}
+                id={message.id}
+                updateData={updateData}
+                onCloseModal={onCloseModal}
+                deleteRow={deleteRow}
             />}
-            {message.type === 'row' &&
-            <button
-                className="modal-message-button"
-                onClick={() => {
-                    deleteRow(message.id);
-                    onCloseModal();
-                }}
-            >
-                    Удалить
-            </button>
-            }
         </div>
     </div>
 );
@@ -39,7 +34,8 @@ const Modal = ({message, onCloseModal, deleteRow}) => (
 Modal.propTypes = {
     message: PropTypes.object,
     onCloseModal: PropTypes.func.isRequired,
-    deleteRow: PropTypes.func.isRequired
+    deleteRow: PropTypes.func.isRequired,
+    updateData: PropTypes.func.isRequired
 };
 
 Modal.defaultProps = {

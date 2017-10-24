@@ -9,7 +9,8 @@ const propsError = {
         message: 'testMes'
     },
     onCloseModal: jest.fn(),
-    deleteRow: jest.fn()
+    deleteRow: jest.fn(),
+    updateData: jest.fn()
 };
 const propsSucsess = {
     message: {
@@ -19,7 +20,8 @@ const propsSucsess = {
         message: 'testMes'
     },
     onCloseModal: jest.fn(),
-    deleteRow: jest.fn()
+    deleteRow: jest.fn(),
+    updateData: jest.fn()
 };
 const propsRow = {
     message: {
@@ -33,7 +35,8 @@ const propsRow = {
         age: '20'
     },
     onCloseModal: jest.fn(),
-    deleteRow: jest.fn()
+    deleteRow: jest.fn(),
+    updateData: jest.fn()
 };
 
 it('does showing props in error box', () => {
@@ -44,15 +47,11 @@ it('does showing props in error box', () => {
 
 it('does showing props in row box', () => {
     const wrapperWithRow = mount(<Modal {...propsRow} />);
-    expect(wrapperWithRow.find('.modal-message-box-row-value').at(0).text()).toEqual(propsRow.message.firstName);
-    expect(wrapperWithRow.find('.modal-message-box-row-value').at(1).text()).toEqual(propsRow.message.lastName);
-    expect(wrapperWithRow.find('.modal-message-box-row-value').at(2).text()).toBe(`${propsRow.message.age}`);
-    expect(wrapperWithRow.find('.modal-message-box-row-value').at(3).text()).toEqual(propsRow.message.email);
-    wrapperWithRow.find('.modal-message-button').simulate('click');
-    wrapperWithRow.find('.modal-message-button').simulate('click');
-    expect(propsRow.deleteRow.mock.calls.length).toEqual(2);
-    expect(propsRow.onCloseModal.mock.calls.length).toEqual(2);
+    wrapperWithRow.find('.modal-message-button-delete').simulate('click');
+    expect(propsRow.deleteRow.mock.calls.length).toEqual(1);
+    expect(propsRow.onCloseModal.mock.calls.length).toEqual(1);
 });
+
 it('does showing props in succsess box', () => {
     const wrapperWithSuccsess = mount(<Modal {...propsSucsess} />);
     expect(wrapperWithSuccsess.find('.modal-message-box-error-name').at(0).text()).toEqual(`${propsSucsess.message.name}: `);

@@ -29,6 +29,13 @@ router
         ctx.set('Access-Control-Allow-Origin', '*');
         ctx.body = JSON.stringify(users.get());
     })
+    .patch('/data', async (ctx) => {
+        ctx.set('Accept', 'application/json');
+        ctx.set('Access-Control-Allow-Origin', '*');
+        users.patch(ctx.request.body);
+        ctx.status = 200;
+        ctx.body = JSON.stringify(users.get());
+    })
     .put('/data', async (ctx) => {
         ctx.set('Accept', 'application/json');
         ctx.type = 'json';

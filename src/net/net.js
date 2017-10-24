@@ -26,6 +26,21 @@ class Net {
         });
     }
 
+    static patch(url, payload) {
+        return new Promise((resolve) => {
+            fetch(url, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            }).then(response => response.json())
+                .then((body) => {
+                    resolve(body);
+                });
+        });
+    }
+
     static delete(url, payload) {
         return new Promise((resolve) => {
             fetch(url, {
