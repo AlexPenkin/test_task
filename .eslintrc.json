@@ -1,0 +1,91 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "globals": {
+    "browser": true,
+    "jest": true
+  },
+  "rules": {
+    "arrow-body-style": ["error", "as-needed"],
+    "comma-dangle": ["error", "never"],
+    "consistent-return": "error",
+    "indent": ["warn", 4, { "SwitchCase": 1 }],
+    "key-spacing": ["warn", {
+      "beforeColon": false,
+      "afterColon": true,
+      "mode": "minimum"
+    }],
+    "linebreak-style": ["error", "windows"],
+    "max-len": ["warn", {
+      "code": 120,
+      "tabWidth": 4,
+      "ignoreTrailingComments": true,
+      "ignoreUrls": true
+    }],
+    "no-mixed-requires": "off",
+    "no-mixed-operators": "off",
+    "no-multi-spaces": ["error",
+      { "exceptions": { "VariableDeclarator": true }}],
+    "no-param-reassign": ["error", { "props": false }],
+    "no-underscore-dangle": "off",
+    "no-unused-vars": ["warn", {
+      "argsIgnorePattern": "^_",
+      "varsIgnorePattern": "^_"
+    }],
+    "no-plusplus": ["warn", {
+      "allowForLoopAfterthoughts": true
+    }],
+    "no-confusing-arrow": "off",
+    "no-alert": "off",
+    "object-curly-spacing": "off",
+    "one-var": ["error", "never"],
+    "prefer-template": "warn",
+    "quote-props": ["warn",
+      "as-needed",
+      { "keywords": true, "unnecessary": false }],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "global-require": "off",
+    "semi": [
+      "error",
+      "always"
+    ],
+    "unicode-bom": ["off"],
+    "radix": ["error", "as-needed"],
+
+    // ----------------------------
+    // Import settings
+    // ----------------------------
+    "import/prefer-default-export": "off",
+    "import/no-webpack-loader-syntax": "warn",
+    "import/no-unresolved": "warn",
+
+    // ----------------------------
+    // JSX a11y settings
+    // ----------------------------
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/href-no-hash": "off",
+    "label-has-for": "off",
+
+    // ----------------------------
+    // React settings
+    // ----------------------------
+    "react/jsx-filename-extension": "off",
+    "react/jsx-indent": ["warn", 4],
+    "react/jsx-indent-props": ["warn", 4],
+    "react/prefer-es6-class": "warn",
+    "react/jsx-boolean-value": "off",
+    "react/prefer-stateless-function": "warn",
+    "react/sort-comp": "warn",
+    "react/forbid-prop-types": "off",
+    "react/no-array-index-key": "warn",
+    "react/no-unused-prop-types": "warn"
+  }
+}

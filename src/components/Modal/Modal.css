@@ -1,0 +1,111 @@
+.modal {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(46, 51, 51, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal-message-box {
+    background-color: #ffffff;
+    padding: 20px;
+    min-height: 200px;
+    width: 400px;
+    position: relative;
+}
+
+.modal-message-button {
+    margin: 0 auto;
+    width: 100px;
+    display: block;
+    height: 30px;
+    border: 0;
+    border-radius: 3px;
+    padding: 6px;
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.1);
+    -webkit-transition: all .1s ease;
+    -o-transition: all .1s ease;
+    transition: all .1s ease;
+    outline: none;
+}
+
+.modal-message-box-title {
+    text-align: left;
+    font-size: 20px;
+}
+
+.modal-message-button {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.modal-message-box-error {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.modal-message-box-error-name {
+    float: left;
+}
+
+.modal-message-box-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.modal-message-box-error-message {
+    padding-left: 5px;
+}
+
+.modal-message-box-row {
+    margin-top: 40px;
+}
+
+.modal-message-box-row-name {
+    text-align: left;
+    width: 170px;
+    display: inline-block;
+}
+
+.close {
+    position: absolute;
+    right: 16px;
+    top: 10px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+    background: white;
+    border: none;
+    outline: transparent;
+    cursor: pointer;
+}
+
+.close:hover {
+    opacity: 1;
+}
+
+.close:before,
+.close:after {
+    position: absolute;
+    left: 16px;
+    top: 3px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: rgb(117, 21, 21);
+}
+
+.close:before {
+    transform: rotate(45deg);
+}
+
+.close:after {
+    transform: rotate(-45deg);
+}
