@@ -13,7 +13,7 @@ const app = new Koa();
 const readFileAsync = promisify(fs.readFile);
 const users = new Users();
 const viewPath = './build/index.html';
-const PORT = 80;
+const PORT = 5566;
 
 app
     .use(serve('./build/'))
